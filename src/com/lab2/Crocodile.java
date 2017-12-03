@@ -1,16 +1,16 @@
 package com.lab2;
 
 public class Crocodile extends Animal {
-    Crocodile() {
-        super(Size.NORMAL, 50);
+    Crocodile(String name) {
+        super(name,8, 50, CellType.TERRARIUM,10);
     }
     @Override
-    public Size getSize() {
+    public int getSize() {
         return super.getSize();
     }
 
     @Override
-    public void setSize(Size size) {
+    public void setSize(int size) {
         super.setSize(size);
     }
 
@@ -42,5 +42,25 @@ public class Crocodile extends Animal {
     @Override
     public void setCell(Cell cell) {
         super.setCell(cell);
+    }
+
+    @Override
+    public CellType getRequiredCellType() {
+        return super.getRequiredCellType();
+    }
+
+    @Override
+    public void setRequiredCellType(CellType requiredCellType) {
+        super.setRequiredCellType(requiredCellType);
+    }
+
+    @Override
+    public int getRequiredCellSize() {
+        return super.getRequiredCellSize();
+    }
+
+    @Override
+    public void setRequiredCellSize(int requiredCellSize) {
+        super.setRequiredCellSize(requiredCellSize);
     }
 }

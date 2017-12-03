@@ -1,8 +1,9 @@
 package com.lab2;
 
-public class Bird extends Animal {
-    Bird(String name) {
-        super(name,2, 25, CellType.BIRDCAGE,3);
+public class Dolphin extends Animal {
+
+    Dolphin(String name) {
+        super(name,8, 25, CellType.AQUARIUM, 15);
     }
 
     @Override

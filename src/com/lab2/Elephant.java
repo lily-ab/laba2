@@ -1,17 +1,17 @@
 package com.lab2;
 
 public class Elephant extends Animal{
-    Elephant() {
-        super(Size.HUGE, 85);
+    Elephant(String name) {
+        super(name,25, 85, CellType.AVIARY, 35);
     }
 
     @Override
-    public Size getSize() {
+    public int getSize() {
         return super.getSize();
     }
 
     @Override
-    public void setSize(Size size) {
+    public void setSize(int size) {
         super.setSize(size);
     }
 
@@ -43,5 +43,25 @@ public class Elephant extends Animal{
     @Override
     public void setCell(Cell cell) {
         super.setCell(cell);
+    }
+
+    @Override
+    public CellType getRequiredCellType() {
+        return super.getRequiredCellType();
+    }
+
+    @Override
+    public void setRequiredCellType(CellType requiredCellType) {
+        super.setRequiredCellType(requiredCellType);
+    }
+
+    @Override
+    public int getRequiredCellSize() {
+        return super.getRequiredCellSize();
+    }
+
+    @Override
+    public void setRequiredCellSize(int requiredCellSize) {
+        super.setRequiredCellSize(requiredCellSize);
     }
 }
