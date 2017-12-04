@@ -40,6 +40,18 @@ class Cell {
     public int getSize() {
         return size.getSize();
     }
+
+    @Override
+    public String toString(){
+        System.out.println("Cells:");
+        if(animal!=null){
+            return cellType+" size - "+size;
+        }
+        else{
+            return cellType+" size - "+size+" animal - "+animal.toString();
+        }
+
+    }
 }
 
 enum CellType{

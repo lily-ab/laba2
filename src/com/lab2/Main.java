@@ -95,13 +95,15 @@ public class Main {
                     }
                     break;
                 case "4":
-
+                    //put
+                    //get information about animals and cells
+                    zoo.getInfo();
                     break;
                 case "5":
-                    //      zoo.putAnimal();
+                    // take
                     break;
                 case "6":
-             //       zoo.displayZooInfo();
+                    zoo.getInfo();
                     break;
                 case "7":
                     flag=false;

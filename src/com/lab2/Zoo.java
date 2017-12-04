@@ -54,7 +54,12 @@ public class Zoo {
             if(an.getCell()==null){
                 System.out.println(an.toString());
             }
-            System.out.println(an.toString());
+            else {
+                System.out.println(an.toString() + " Cell: " + an.getCell());
+            }
+        }
+        for(Cell c: cells){
+            System.out.println(c.toString());
         }
     }
 }
