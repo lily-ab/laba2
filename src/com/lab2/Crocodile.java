@@ -2,17 +2,12 @@ package com.lab2;
 
 public class Crocodile extends Animal {
     Crocodile(String name) {
-        super(name, 8, 50, CellType.TERRARIUM, 10);
+        super(name, Size.NORMAL, 50, CellType.TERRARIUM, 10);
     }
 
     @Override
     public int getSize() {
         return super.getSize();
-    }
-
-    @Override
-    public void setSize(int size) {
-        super.setSize(size);
     }
 
     @Override

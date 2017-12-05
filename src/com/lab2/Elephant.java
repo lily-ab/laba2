@@ -2,17 +2,12 @@ package com.lab2;
 
 public class Elephant extends Animal {
     Elephant(String name) {
-        super(name, 25, 85, CellType.AVIARY, 35);
+        super(name, Size.HUGE, 85, CellType.AVIARY, 35);
     }
 
     @Override
     public int getSize() {
         return super.getSize();
-    }
-
-    @Override
-    public void setSize(int size) {
-        super.setSize(size);
     }
 
     @Override

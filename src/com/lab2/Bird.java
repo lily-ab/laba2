@@ -2,17 +2,12 @@ package com.lab2;
 
 public class Bird extends Animal {
     Bird(String name) {
-        super(name, 2, 25, CellType.BIRDCAGE, 3);
+        super(name, Size.TINY, 25, CellType.BIRDCAGE, 3);
     }
 
     @Override
     public int getSize() {
         return super.getSize();
-    }
-
-    @Override
-    public void setSize(int size) {
-        super.setSize(size);
     }
 
     @Override

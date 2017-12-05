@@ -91,10 +91,13 @@ public class Zoo {
     public Condition checkCondition(Animal animal){
         if(animal.getCell().getCellType()==animal.getRequiredCellType()){
             if(animal.getSize()==animal.getCell().getSize()){
+                animal.setCondition(Condition.GOOD);
                 return Condition.GOOD;
             }
+            animal.setCondition(Condition.NORMAL);
             return Condition.NORMAL;
         }
+        animal.setCondition(Condition.BAD);
         return Condition.BAD;
     }
 

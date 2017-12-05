@@ -43,6 +43,6 @@ class Cell {
         if (animal == null) {
             return cellType + " size - " + size;
         }
-        return cellType + " size - " + size + " animal - " + animal.toString();
+        return cellType + " size - " + size + " has an animal";
     }
 }

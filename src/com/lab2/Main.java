@@ -25,7 +25,7 @@ public class Main {
                     break;
                 case "2":
                     System.out.println("Choose animal:");
-                    System.out.println("\t1 - Bear; \n 2 - Bird; \n 3 - Crocodile; \n 4 - Dolphin; \n 5 - Elephant;" +
+                    System.out.println(" 1 - Bear; \n 2 - Bird; \n 3 - Crocodile; \n 4 - Dolphin; \n 5 - Elephant;" +
                             "\n 6 - Monkey;");
                     String ch = s.next();
                     System.out.println("Enter name");

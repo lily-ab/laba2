@@ -3,17 +3,12 @@ package com.lab2;
 public class Dolphin extends Animal {
 
     Dolphin(String name) {
-        super(name, 8, 25, CellType.AQUARIUM, 15);
+        super(name, Size.NORMAL, 25, CellType.AQUARIUM, 15);
     }
 
     @Override
     public int getSize() {
         return super.getSize();
-    }
-
-    @Override
-    public void setSize(int size) {
-        super.setSize(size);
     }
 
     @Override

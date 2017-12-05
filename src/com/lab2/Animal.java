@@ -2,14 +2,14 @@ package com.lab2;
 
 abstract class Animal {
     private String name;
-    private int size;
+    private Size size;
     private int price;
     private Cell cell;
     private Condition condition;
     private CellType requiredCellType;
     private int requiredCellSize;
 
-    Animal(String name, int size, int price, CellType requiredCellType, int requiredCellSize) {
+    Animal(String name, Size size, int price, CellType requiredCellType, int requiredCellSize) {
         this.name = name;
         this.size = size;
         this.price = price;
@@ -21,14 +21,14 @@ abstract class Animal {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.name;
+        return this.getClass().getSimpleName() + " " + this.name + " IS " + getCondition();
     }
 
     public int getSize() {
-        return size;
+        return size.getSize();
     }
 
-    public void setSize(int size) {
+    public void setSize(Size size) {
         this.size = size;
     }
 
