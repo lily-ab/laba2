@@ -3,7 +3,7 @@ package com.lab2;
 public class Monkey extends Animal {
     Monkey(String name) {
 
-        super(name,4, 40,CellType.AVIARY, 7);
+        super(name, 4, 40, CellType.AVIARY, 7);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.lab2;
 
-public class Elephant extends Animal{
+public class Elephant extends Animal {
     Elephant(String name) {
-        super(name,25, 85, CellType.AVIARY, 35);
+        super(name, 25, 85, CellType.AVIARY, 35);
     }
 
     @Override

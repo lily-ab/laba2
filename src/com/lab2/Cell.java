@@ -10,27 +10,20 @@ class Cell {
     private int price;
     private Size size;
     private CellType cellType;
-    Cell(CellType cellType, Size size){
-        this.cellType=cellType;
-        this.size=size;
-        this.price=size.getPrice();
+
+    Cell(CellType cellType, Size size) {
+        this.cellType = cellType;
+        this.size = size;
+        this.price = size.getPrice();
     }
 
-    public String putAnimal(Animal animal){
-        if(this.animal!=null){
-            return "Cell already has an animal";
-        }
-        if(this.size.getSize()<animal.getSize()){
-            return "The cell is too small for it";
-        }
-        this.animal=animal;
-        return "Animal is placed successfully";
+
+    public Animal getAnimal() {
+        return animal;
     }
 
-    public Animal getAnimal(){
-        Animal an=animal;
-        this.animal=null;
-        return an;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
     public int getPrice() {
@@ -41,48 +34,15 @@ class Cell {
         return size.getSize();
     }
 
+    public CellType getCellType() {
+        return cellType;
+    }
+
     @Override
-    public String toString(){
-        System.out.println("Cells:");
-        if(animal!=null){
-            return cellType+" size - "+size;
+    public String toString() {
+        if (animal == null) {
+            return cellType + " size - " + size;
         }
-        else{
-            return cellType+" size - "+size+" animal - "+animal.toString();
-        }
-
-    }
-}
-
-enum CellType{
-    AVIARY,
-    AQUARIUM,
-    TERRARIUM,
-    BIRDCAGE,
-    STABLE
-}
-
-enum Size{
-
-    TINY(3,10),
-    SMALL(10,15),
-    NORMAL(15,20),
-    BUG(20,25),
-    HUGE(35,40);
-
-    private int price;
-    private int size;
-
-    Size(int size, int price) {
-        this.price=price;
-        this.size=size;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public int getSize() {
-        return size;
+        return cellType + " size - " + size + " animal - " + animal.toString();
     }
 }

@@ -2,8 +2,9 @@ package com.lab2;
 
 public class Crocodile extends Animal {
     Crocodile(String name) {
-        super(name,8, 50, CellType.TERRARIUM,10);
+        super(name, 8, 50, CellType.TERRARIUM, 10);
     }
+
     @Override
     public int getSize() {
         return super.getSize();

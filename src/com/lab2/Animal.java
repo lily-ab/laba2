@@ -9,19 +9,19 @@ abstract class Animal {
     private CellType requiredCellType;
     private int requiredCellSize;
 
-    Animal(String name, int size, int price, CellType requiredCellType, int requiredCellSize){
-        this.name=name;
-        this.size=size;
-        this.price=price;
-        this.condition=Condition.NORMAL;
-        this.cell=null;
-        this.requiredCellType=requiredCellType;
-        this.requiredCellSize=requiredCellSize;
+    Animal(String name, int size, int price, CellType requiredCellType, int requiredCellSize) {
+        this.name = name;
+        this.size = size;
+        this.price = price;
+        this.condition = Condition.NORMAL;
+        this.cell = null;
+        this.requiredCellType = requiredCellType;
+        this.requiredCellSize = requiredCellSize;
     }
 
     @Override
     public String toString() {
-        return this.getClass().getName()+" "+this.name;
+        return this.getClass().getSimpleName() + " " + this.name;
     }
 
     public int getSize() {
@@ -48,7 +48,7 @@ abstract class Animal {
         this.condition = condition;
     }
 
-    public Cell getCell(){
+    public Cell getCell() {
         return cell;
     }
 
