@@ -1,9 +1,12 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
 
-public class Monkey extends Animal {
-    Monkey(String name) {
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
 
-        super(name, Size.SMALL, 40, CellType.AVIARY, 7);
+public class Crocodile extends Animal {
+    public Crocodile(String name) {
+        super(name, Size.NORMAL, 50, CellType.TERRARIUM, 10);
     }
 
     @Override

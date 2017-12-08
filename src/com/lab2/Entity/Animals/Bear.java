@@ -1,8 +1,12 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
+
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
 
 public class Bear extends Animal {
-    Bear(String name) {
-        super(name,Size.BIG, 60, CellType.AVIARY, 20);
+    public Bear(String name) {
+        super(name, Size.BIG, 60, CellType.AVIARY, 20);
     }
 
     @Override

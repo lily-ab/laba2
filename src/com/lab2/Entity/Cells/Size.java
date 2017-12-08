@@ -1,4 +1,4 @@
-package com.lab2;
+package com.lab2.Entity.Cells;
 
 public enum Size {
     TINY(3, 10),

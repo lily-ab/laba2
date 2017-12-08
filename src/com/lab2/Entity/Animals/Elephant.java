@@ -1,7 +1,11 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
+
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
 
 public class Elephant extends Animal {
-    Elephant(String name) {
+    public Elephant(String name) {
         super(name, Size.HUGE, 85, CellType.AVIARY, 35);
     }
 

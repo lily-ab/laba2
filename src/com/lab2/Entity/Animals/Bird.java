@@ -1,7 +1,11 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
+
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
 
 public class Bird extends Animal {
-    Bird(String name) {
+    public Bird(String name) {
         super(name, Size.TINY, 25, CellType.BIRDCAGE, 3);
     }
 

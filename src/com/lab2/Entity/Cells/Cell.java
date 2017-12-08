@@ -1,11 +1,9 @@
-package com.lab2;
+package com.lab2.Entity.Cells;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.lab2.Entity.Animals.Animal;
 
 
-class Cell {
+public class Cell {
     private Animal animal;
     private int price;
     private Size size;

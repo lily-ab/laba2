@@ -1,6 +1,10 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
 
-abstract class Animal {
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
+
+public abstract class Animal {
     private String name;
     private Size size;
     private int price;
@@ -21,7 +25,7 @@ abstract class Animal {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.name + " IS " + getCondition();
+        return this.getClass().getSimpleName() + " " + this.name + " MOOD IS " + getCondition();
     }
 
     public int getSize() {

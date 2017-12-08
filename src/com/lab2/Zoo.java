@@ -1,20 +1,34 @@
 package com.lab2;
 
-import java.lang.reflect.Field;
+import com.lab2.Entity.Animals.Animal;
+import com.lab2.Entity.Animals.Condition;
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
     private int money;
     private int capacity;
+    private final int PAYMENTFORSERVICE;
+    private int profit;
 
     Zoo() {
         capacity = 100;
         money = 500;
+        PAYMENTFORSERVICE = 25;
+        profit=50;
     }
 
     List<Animal> animals = new ArrayList<>();
     List<Cell> cells = new ArrayList<>();
+
+    public void passDay(){
+        money-=PAYMENTFORSERVICE;
+        money+=profit;
+    }
 
 
     public int getMoney() {
@@ -83,8 +97,8 @@ public class Zoo {
         cell.setAnimal(animal);
         animal.setCell(cell);
         Condition cond=checkCondition(animal);
-        if(cond==Condition.GOOD) money+=50;
-        if(cond==Condition.BAD) money-=50;
+        if(cond==Condition.GOOD) profit+=50;
+        if(cond==Condition.BAD) profit-=50;
         return "Animal is placed successfully";
     }
 

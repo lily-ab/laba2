@@ -1,4 +1,4 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
 
 public enum Condition {
     BAD,

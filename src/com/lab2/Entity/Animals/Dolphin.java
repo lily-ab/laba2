@@ -1,8 +1,12 @@
-package com.lab2;
+package com.lab2.Entity.Animals;
+
+import com.lab2.Entity.Cells.Cell;
+import com.lab2.Entity.Cells.CellType;
+import com.lab2.Entity.Cells.Size;
 
 public class Dolphin extends Animal {
 
-    Dolphin(String name) {
+    public Dolphin(String name) {
         super(name, Size.NORMAL, 25, CellType.AQUARIUM, 15);
     }
 
