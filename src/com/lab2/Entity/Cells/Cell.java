@@ -9,7 +9,7 @@ public class Cell {
     private Size size;
     private CellType cellType;
 
-    Cell(CellType cellType, Size size) {
+    public Cell(CellType cellType, Size size) {
         this.cellType = cellType;
         this.size = size;
         this.price = size.getPrice();

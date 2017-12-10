@@ -5,7 +5,7 @@ import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
 
 public class Monkey extends Animal {
-    Monkey(String name) {
+    public Monkey(String name) {
 
         super(name, Size.SMALL, 40, CellType.AVIARY, 7);
     }

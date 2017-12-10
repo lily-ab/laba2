@@ -1,11 +1,10 @@
-package com.lab2;
+package com.lab2.Game;
 
 import com.lab2.Entity.Animals.*;
 import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
+import com.lab2.Factory.AnimalFactory.AnimalFactoryCreator;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 
@@ -38,44 +37,15 @@ public class Main {
                     System.out.println(" 1 - Bear; \n 2 - Bird; \n 3 - Crocodile; \n 4 - Dolphin; \n 5 - Elephant;" +
                             "\n 6 - Monkey;");
                     String ch = s.next();
-
-
+                    AnimalFactoryCreator animals=new AnimalFactoryCreator();
                     System.out.println("Enter name");
                     String name = s.next();
-                    Animal animal;
-                    switch (ch) {
-                        case "1":
-                            animal = new Bear(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        case "2":
-                            animal = new Bird(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        case "3":
-                            animal = new Crocodile(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        case "4":
-                            animal = new Dolphin(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        case "5":
-                            animal = new Elephant(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        case "6":
-                            animal = new Monkey(name);
-                            System.out.println(zoo.buyAnimal(animal));
-                            break;
-                        default:
-                            System.out.println("Wrong number");
-                    }
+                    Animal animal=animals.createAnimal(ch,name);
+                    System.out.println(zoo.buyAnimal(animal));
                     break;
                 case "4":
                     CellType[] cellTypes = CellType.values();
                     Size[] sizes = Size.values();
-
 
                     for (int i = 0; i < cellTypes.length; i++) {
                         System.out.println("Types:");

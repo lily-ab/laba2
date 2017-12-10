@@ -1,4 +1,4 @@
-package com.lab2;
+package com.lab2.Game;
 
 import com.lab2.Entity.Animals.Animal;
 import com.lab2.Entity.Animals.Condition;
@@ -57,6 +57,9 @@ public class Zoo {
             return "Animal is bought";
         } catch (ClassCastException ex) {
             return "Wrong animal";
+        }
+        catch (NullPointerException ex) {
+            return "Animal wasn't chosen";
         }
     }
 

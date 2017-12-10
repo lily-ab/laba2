@@ -4,6 +4,8 @@ import com.lab2.Entity.Cells.Cell;
 import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
 
+import java.util.List;
+
 public abstract class Animal {
     private String name;
     private Size size;
@@ -12,8 +14,9 @@ public abstract class Animal {
     private Condition condition;
     private CellType requiredCellType;
     private int requiredCellSize;
+    private List availableListTypes;
 
-    Animal(String name, Size size, int price, CellType requiredCellType, int requiredCellSize) {
+    Animal(String name, Size size, int price, CellType requiredCellType, int requiredCellSize, List<CellType> availableListTypes) {
         this.name = name;
         this.size = size;
         this.price = price;
@@ -21,6 +24,7 @@ public abstract class Animal {
         this.cell = null;
         this.requiredCellType = requiredCellType;
         this.requiredCellSize = requiredCellSize;
+        this.availableListTypes=availableListTypes;
     }
 
     @Override
@@ -74,6 +78,10 @@ public abstract class Animal {
 
     public void setRequiredCellSize(int requiredCellSize) {
         this.requiredCellSize = requiredCellSize;
+    }
+
+    public List getAvailableListTypes() {
+        return availableListTypes;
     }
 }
 
