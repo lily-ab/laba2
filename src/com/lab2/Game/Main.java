@@ -1,11 +1,5 @@
 package com.lab2.Game;
 
-import com.lab2.Entity.Animals.*;
-import com.lab2.Entity.Cells.Cell;
-import com.lab2.Entity.Cells.CellType;
-import com.lab2.Entity.Cells.Size;
-import com.lab2.Factory.AnimalFactory.AnimalFactoryCreator;
-
 import java.util.Scanner;
 
 
@@ -32,48 +26,29 @@ public class Main {
                     break;
                 case "2":
                     zoo.passDay();
-                break;
+                    break;
                 case "3":
                     System.out.println("Choose animal:");
                     System.out.println(" 1 - Bear; \n 2 - Bird; \n 3 - Crocodile; \n 4 - Dolphin; \n 5 - Elephant;" +
                             "\n 6 - Monkey;");
                     String ch = s.next();
-                    AnimalFactoryCreator animals=new AnimalFactoryCreator();
                     System.out.println("Enter name");
                     String name = s.next();
                     System.out.println("Enter gender");
                     System.out.println(" 1 - Male; \n 2 - Female;");
                     int gender = s.nextInt();
-                    Animal animal=animals.createAnimal(ch,name,gender);
-                    System.out.println(zoo.buyAnimal(animal));
+                    System.out.println(zoo.buyAnimal(ch, name, gender));
                     break;
                 case "4":
-                    CellType[] cellTypes = CellType.values();
-                    Size[] sizes = Size.values();
-
-                    for (int i = 0; i < cellTypes.length; i++) {
-                        System.out.println("Types:");
-                        System.out.println((i + 1) + ") " + cellTypes[i]);
-                    }
-                    for (int i = 0; i < sizes.length; i++) {
-                        System.out.println("Sizes:");
-                        System.out.println(i + 1 + ") " + sizes[i] + "\n \t price - " +
-                                +sizes[i].getPrice() + ";\n \t size - " + sizes[i].getSize() + ";");
-                    }
-
+                    zoo.showCells();
                     try {
                         System.out.println("Enter number of type:");
-                        int index = s.nextInt() - 1;
-                        CellType cellType = cellTypes[index];
+                        int indexType = s.nextInt() - 1;
                         System.out.println("Enter number of size:");
-                        index = s.nextInt() - 1;
-                        Size size = sizes[index];
-                        System.out.println(zoo.buyCell(cellType, size));
+                        int indexSize = s.nextInt() - 1;
+                        zoo.buyCell(indexType, indexSize);
                     } catch (IllegalArgumentException ex) {
                         System.out.println("Entered value is not a number");
-                        break;
-                    } catch (NullPointerException ex) {
-                        System.out.println("Wrong number");
                         break;
                     }
                     break;
@@ -99,7 +74,7 @@ public class Main {
                 default:
                     System.out.println("Wrong choice");
             }
-            if(zoo.getMoney()<0){
+            if (zoo.getMoney() < 0) {
                 System.out.println("You're out of money!");
                 break;
             }

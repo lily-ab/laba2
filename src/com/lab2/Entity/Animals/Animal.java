@@ -1,5 +1,6 @@
 package com.lab2.Entity.Animals;
 
+import com.lab2.ConditionStrategy.Condition;
 import com.lab2.Entity.Cells.Cell;
 import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
@@ -19,7 +20,7 @@ public abstract class Animal {
 
     Animal(String name, Gender gender, Size size, int price, CellType requiredCellType, int requiredCellSize) {
         this.name = name;
-        this.gender=gender;
+        this.gender = gender;
         this.size = size;
         this.price = price;
         this.condition = Condition.NORMAL;
@@ -30,8 +31,9 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + this.name + " MOOD IS " + getCondition();
+        return " " + this.name + " MOOD IS " + getCondition();
     }
+
 
     public Gender getGender() {
         return gender;
@@ -73,8 +75,7 @@ public abstract class Animal {
         return requiredCellType;
     }
 
-    public void setRequiredCellType(CellType requiredCellType)
-    {
+    public void setRequiredCellType(CellType requiredCellType) {
         this.requiredCellType = requiredCellType;
     }
 
