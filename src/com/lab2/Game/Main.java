@@ -1,6 +1,7 @@
 package com.lab2.Game;
 
 import com.lab2.Entity.Animals.*;
+import com.lab2.Entity.Cells.Cell;
 import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
 import com.lab2.Factory.AnimalFactory.AnimalFactoryCreator;
@@ -40,7 +41,10 @@ public class Main {
                     AnimalFactoryCreator animals=new AnimalFactoryCreator();
                     System.out.println("Enter name");
                     String name = s.next();
-                    Animal animal=animals.createAnimal(ch,name);
+                    System.out.println("Enter gender");
+                    System.out.println(" 1 - Male; \n 2 - Female;");
+                    int gender = s.nextInt();
+                    Animal animal=animals.createAnimal(ch,name,gender);
                     System.out.println(zoo.buyAnimal(animal));
                     break;
                 case "4":
@@ -80,14 +84,14 @@ public class Main {
                     int animalInd = s.nextInt() - 1;
                     System.out.println("Enter the index of cell");
                     int cellInd = s.nextInt() - 1;
-                    System.out.println(zoo.putAnimal(animalInd, cellInd));
+                    System.out.println(zoo.put(animalInd, cellInd));
                     break;
                 case "6":
                     // take
                     zoo.getInfo();
                     System.out.println("Enter the index of animal");
                     int animalInd1 = s.nextInt() - 1;
-                    System.out.println(zoo.getOutOfCell(animalInd1));
+                    System.out.println(zoo.take(animalInd1));
                     break;
                 case "7":
                     flag = false;

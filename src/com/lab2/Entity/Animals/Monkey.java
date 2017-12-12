@@ -4,10 +4,15 @@ import com.lab2.Entity.Cells.Cell;
 import com.lab2.Entity.Cells.CellType;
 import com.lab2.Entity.Cells.Size;
 
-public class Monkey extends Animal {
-    public Monkey(String name) {
+import java.util.ArrayList;
+import java.util.List;
 
-        super(name, Size.SMALL, 40, CellType.AVIARY, 7);
+public class Monkey extends Animal {
+    public Monkey(String name, Gender gender) {
+        super(name, gender, Size.SMALL, 40, CellType.AVIARY, 7);
+        List<CellType> types=new ArrayList<>();
+        types.add(CellType.AVIARY);
+        setAvailableListTypes(types);
     }
 
     @Override

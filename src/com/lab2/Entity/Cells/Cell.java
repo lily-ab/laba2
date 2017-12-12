@@ -1,10 +1,14 @@
 package com.lab2.Entity.Cells;
 
 import com.lab2.Entity.Animals.Animal;
+import com.lab2.Entity.Animals.Condition;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Cell {
-    private Animal animal;
+    private List<Animal> animals=new ArrayList<>();
     private int price;
     private Size size;
     private CellType cellType;
@@ -15,13 +19,44 @@ public class Cell {
         this.price = size.getPrice();
     }
 
-
-    public Animal getAnimal() {
-        return animal;
+    public String putAnimal(Animal animal) {
+       // if (animalInd < 0 || animalInd >= animals.size()) return "Wrong index";
+        if(!animal.getAvailableListTypes().contains(cellType)){
+            return "Animal and cell are incompatible";
+        }
+        if (getFreeSize() < animal.getSize() ) {
+            return "Cell is full. Animal is not placed";
+        }
+        animals.add(animal);
+        animal.setCell(this);
+        return "Animal is placed successfully";
     }
 
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
+    public String getOutOfCell(int animalInd) {
+        if (animalInd < 0 || animalInd >= animals.size()) return "Wrong index";
+        Animal animal = animals.get(animalInd);
+        if (animals.get(animalInd)==null) {
+            return "Cell doesn't contain this animal";
+        }
+        animal.setCell(null);
+        animals.remove(animal);
+        return "You pulled animal from the cell";
+    }
+
+    public int getFreeSize(){
+        int occupied=0;
+        if(animals.size()==0) return size.getSize();
+        for(Animal animal: animals){
+            occupied+=animal.getSize();
+        }
+        return size.getSize()-occupied;
+    }
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
     }
 
     public int getPrice() {
@@ -38,7 +73,7 @@ public class Cell {
 
     @Override
     public String toString() {
-        if (animal == null) {
+        if (animals.size() == 0) {
             return cellType + " size - " + size;
         }
         return cellType + " size - " + size + " has an animal";

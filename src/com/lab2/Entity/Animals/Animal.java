@@ -8,6 +8,7 @@ import java.util.List;
 
 public abstract class Animal {
     private String name;
+    private Gender gender;
     private Size size;
     private int price;
     private Cell cell;
@@ -16,20 +17,24 @@ public abstract class Animal {
     private int requiredCellSize;
     private List availableListTypes;
 
-    Animal(String name, Size size, int price, CellType requiredCellType, int requiredCellSize, List<CellType> availableListTypes) {
+    Animal(String name, Gender gender, Size size, int price, CellType requiredCellType, int requiredCellSize) {
         this.name = name;
+        this.gender=gender;
         this.size = size;
         this.price = price;
         this.condition = Condition.NORMAL;
         this.cell = null;
         this.requiredCellType = requiredCellType;
         this.requiredCellSize = requiredCellSize;
-        this.availableListTypes=availableListTypes;
     }
 
     @Override
     public String toString() {
         return this.getClass().getSimpleName() + " " + this.name + " MOOD IS " + getCondition();
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 
     public int getSize() {
@@ -68,7 +73,8 @@ public abstract class Animal {
         return requiredCellType;
     }
 
-    public void setRequiredCellType(CellType requiredCellType) {
+    public void setRequiredCellType(CellType requiredCellType)
+    {
         this.requiredCellType = requiredCellType;
     }
 
@@ -83,5 +89,11 @@ public abstract class Animal {
     public List getAvailableListTypes() {
         return availableListTypes;
     }
+
+    public void setAvailableListTypes(List availableListTypes) {
+        this.availableListTypes = availableListTypes;
+    }
+
+
 }
 

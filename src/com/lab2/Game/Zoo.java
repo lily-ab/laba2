@@ -14,6 +14,8 @@ public class Zoo {
     private int capacity;
     private final int PAYMENTFORSERVICE;
     private int profit;
+    List<Animal> animals = new ArrayList<>();
+    List<Cell> cells = new ArrayList<>();
 
     Zoo() {
         capacity = 100;
@@ -22,14 +24,10 @@ public class Zoo {
         profit=50;
     }
 
-    List<Animal> animals = new ArrayList<>();
-    List<Cell> cells = new ArrayList<>();
-
     public void passDay(){
         money-=PAYMENTFORSERVICE;
         money+=profit;
     }
-
 
     public int getMoney() {
         return money;
@@ -86,23 +84,11 @@ public class Zoo {
         getInfo();
     }
 
-    public String putAnimal(int animalInd, int cellInd) {
-        if (animalInd < 0 || animalInd >= animals.size()) return "Wrong index";
+    public  String put(int animalInd, int cellInd){
         if (cellInd < 0 || cellInd >= cells.size()) return "Wrong index";
-        Animal animal = animals.get(animalInd);
         Cell cell = cells.get(cellInd);
-        if (cell.getAnimal() != null) {
-            return "Cell already has an animal";
-        }
-        if (cell.getSize() < animal.getSize()) {
-            return "The cell is too small for it";
-        }
-        cell.setAnimal(animal);
-        animal.setCell(cell);
-        Condition cond=checkCondition(animal);
-        if(cond==Condition.GOOD) profit+=50;
-        if(cond==Condition.BAD) profit-=50;
-        return "Animal is placed successfully";
+        Animal animal=animals.get(animalInd);
+        return cell.putAnimal(animal);
     }
 
     public Condition checkCondition(Animal animal){
@@ -118,15 +104,10 @@ public class Zoo {
         return Condition.BAD;
     }
 
-    public String getOutOfCell(int animalInd) {
+    public  String take(int animalInd){
         if (animalInd < 0 || animalInd >= animals.size()) return "Wrong index";
         Animal animal = animals.get(animalInd);
-        Cell cell = animal.getCell();
-        if (cell.getAnimal() == null) {
-            return "Cell is already empty";
-        }
-        animal.setCell(null);
-        cell.setAnimal(null);
-        return "You pulled animal from the cell";
+        return animal.getCell().getOutOfCell(animalInd);
     }
+
 }
