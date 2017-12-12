@@ -17,16 +17,8 @@ public class Zoo {
     private final int paymentForService;
     private int profit;
 
-    public List<Animal> getAnimals() {
-        return animals;
-    }
-
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
-    }
-
-    List<Animal> animals = new ArrayList<>();
-    List<Cell> cells = new ArrayList<>();
+    private List<Animal> animals = new ArrayList<>();
+    private List<Cell> cells = new ArrayList<>();
 
     Zoo() {
         capacity = 100;
